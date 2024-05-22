@@ -1,34 +1,48 @@
 [create project]
+```
 composer create-project laravel/laravel cloud-care
+```
 
 [start it on http://localhost/]
+```
 cd cloud-care
 php artisan serve [check is working]
+```
 
 [execute migrations]
+```
 php artisan migrate
+```
 
 [install sail]
+```
 composer require laravel/sail --dev
+```
 
 [create mysql image]
+```
 php artisan sail:install
     ->mysql
-
-[start container | -d = detached mode]
-./vendor/bin/sail up -d [check is working]
+```
 
 [create redis image]
+```
 php artisan sail:install
     ->redis
+```
     
 [start container]
-./vendor/bin/sail up -d [check is working]
+```
+./vendor/bin/sail up -d [check is both working]
+```
 
 [publish docker files]
+```
 ./vendor/bin/sail artisan sail:publish
+```
 
 [add to php.ini]
+```
 [XDebug]
     zend_extension = xdebug.so
     xdebug.mode = debug
@@ -37,18 +51,42 @@ php artisan sail:install
     xdebug.idekey = VSC
     xdebug.client_host = host.docker.internal
     xdebug.client_port = 9003
+```
 
 [add xdebug on env]
+```
 SAIL_XDEBUG_MODE=develop,debug,coverage
+```
 
 [rebuild sail docker]
+```
 ./vendor/bin/sail build --no-cache
+```
 
 [start container]
+```
 ./vendor/bin/sail up -d
+```
 
+[install model generator from db]
+```
+./vendor/bin/sail composer require reliese/laravel
+php artisan vendor:publish --tag=reliese-models
+```
 
+[provides a full OAuth2 server implementation]
+```
+./vendor/bin/sail composer require laravel/passport
+./vendor/bin/sail php artisan migrate
+./vendor/bin/sail php artisan passport:install --uuids
+./vendor/bin/sail php artisan passport:keys --force
+./vendor/bin/sail php artisan vendor:publish --tag=passport-config
+```
 
+[inspire the dev]
+```
+php artisan inspire
+```
 
 
 
@@ -58,13 +96,21 @@ SAIL_XDEBUG_MODE=develop,debug,coverage
 [bonus]
 
 [stop container]
+```
 ./vendor/bin/sail stop
+```
 
 [example composer command]
+```
 ./vendor/bin/sail composer require laravel/sanctum
+```
 
 [example artisan command]
+```
 ./vendor/bin/sail artisan queue:work
+```
 
 [run tests]
+```
 ./vendor/bin/sail test
+```
