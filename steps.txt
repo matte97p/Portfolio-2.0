@@ -14,14 +14,48 @@ composer require laravel/sail --dev
 [create mysql image]
 php artisan sail:install
     ->mysql
-./vendor/bin/sail up
+
+[start container | -d = detached mode]
+./vendor/bin/sail up -d [check is working]
 
 [create redis image]
 php artisan sail:install
     ->redis
+    
+[start container]
+./vendor/bin/sail up -d [check is working]
+
+[publish docker files]
+./vendor/bin/sail artisan sail:publish
+
+[add to php.ini]
+[XDebug]
+    zend_extension = xdebug.so
+    xdebug.mode = debug
+    xdebug.start_with_request = yes
+    xdebug.discover_client_host = true
+    xdebug.idekey = VSC
+    xdebug.client_host = host.docker.internal
+    xdebug.client_port = 9003
+
+[add xdebug on env]
+SAIL_XDEBUG_MODE=develop,debug,coverage
+
+[rebuild sail docker]
+./vendor/bin/sail build --no-cache
 
 [start container]
 ./vendor/bin/sail up -d
+
+
+
+
+
+
+
+
+
+[bonus]
 
 [stop container]
 ./vendor/bin/sail stop
