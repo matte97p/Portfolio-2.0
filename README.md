@@ -11,7 +11,7 @@
 # Cloud-Care
 
 > Conoscenze richieste:
-> [Laravel];
+> [Laravel](https://laravel.com/docs);
 
 Rappresenta lo scheletro del nuovo backend. Leggi il generico README.md di progetto per avere maggiori informazioni.
 
@@ -21,7 +21,7 @@ Rappresenta lo scheletro del nuovo backend. Leggi il generico README.md di proge
 
 ## Namespace
 
-**Principali cartelle del progetto(non vengono percorse tutte le cartelle base di Laravel fare riferimento alla [PATH ufficiale Laravel].**
+**Principali cartelle del progetto(non vengono percorse tutte le cartelle base di Laravel fare riferimento alla [PATH ufficiale Laravel](https://laravel.com/docs/10.x/structure).**
 
     Cloud-Care
     |__ app
@@ -57,9 +57,9 @@ Rappresenta lo scheletro del nuovo backend. Leggi il generico README.md di proge
     |__ tests
     |__ ...
 
-**\*** : [Classi Astratte]
+**\*** : [Classi Astratte](https://www.php.net/manual/en/language.oop5.abstract.php)
 
-**\*** : i `Modelli` sono autogenerati con l'utilizzo della libreria [Reliese Laravel] e vengono aggiornato sulla base della configurazione a DB col comando:
+**\*** : i `Modelli` sono autogenerati con l'utilizzo della libreria [Reliese Laravel](https://github.com/reliese/laravel) e vengono aggiornato sulla base della configurazione a DB col comando:
 
 ```
 php artisan code:models --table=\*\*
@@ -76,8 +76,8 @@ Qualsiasi customizzazione (o modello aggiuntivo) deve essere effettuata nella lo
 ## Login
 
 > Conoscenze richieste:
-> [SSO];
-> [Oauth2];
+> [SSO](https://it.wikipedia.org/wiki/Single_sign-on);
+> [Oauth2](https://oauth.net/2/);
 
 Passport-Laravel fornisce un sistema di login OAuth2 con il quale otteniamo un SSO dall'ente che detiene le credenziali criptate di accesso utilizzando Bearer Token oppure permette l'autocertificazione ove non esiste il servizio di autenticazione.
 
@@ -88,21 +88,11 @@ Passport-Laravel fornisce un sistema di login OAuth2 con il quale otteniamo un S
 ## Controller
 
 > Conoscenze richieste:
-> [CRUD];
-> [Classi Astratte];
+> [CRUD](https://it.wikipedia.org/wiki/CRUD);
+> [Classi Astratte](https://www.php.net/manual/en/language.oop5.abstract.php);
 
 I controller sono gestiti mediante due astratti principali `AbstractApiController` e `AbstractCrudController` (entrambi estendono `AbstractGenericController`) divisi ovviamente quindi in controller CRUD per interazioni interna col DB (architettura a microservizi) e chiamate API esterne.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
-
-<!-- MARKDOWN LINKS & IMAGES -->
-
-[Laravel]:(http://laravel.com/docs)
-[PATH ufficiale Laravel]:(https://laravel.com/docs/10.x/structure)
-[Classi Astratte]:(https://www.php.net/manual/en/language.oop5.abstract.php)
-[Reliese Laravel]:(https://github.com/reliese/laravel)
-[SSO]:(https://it.wikipedia.org/wiki/Single_sign-on)
-[Oauth2]:(https://oauth.net/2/)
-[CRUD]:(https://it.wikipedia.org/wiki/CRUD)
