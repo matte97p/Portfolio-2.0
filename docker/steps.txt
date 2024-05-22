@@ -83,6 +83,11 @@ php artisan vendor:publish --tag=reliese-models
 ./vendor/bin/sail php artisan vendor:publish --tag=passport-config
 ```
 
+[run faker]
+```
+./vendor/bin/sail php artisan db:seed
+```
+
 [inspire the dev]
 ```
 php artisan inspire

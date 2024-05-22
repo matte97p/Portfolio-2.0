@@ -1,66 +1,108 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<a id="readme-top"></a>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <a href="https://github.com/matte97p/Cloud-Care">
+        <img src="storage/app/public/matte97.p.svg" alt="Logo" width="500" height="400">
+    </a>
+</div>
 
-## About Laravel
+# Cloud-Care
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> Conoscenze richieste:
+> [Laravel];
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Rappresenta lo scheletro del nuovo backend. Leggi il generico README.md di progetto per avere maggiori informazioni.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Namespace
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**Principali cartelle del progetto(non vengono percorse tutte le cartelle base di Laravel fare riferimento alla [PATH ufficiale Laravel].**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    Cloud-Care
+    |__ app
+    |   |__ Exceptions -> Handler di eccezione custom
+    |   |__ Http
+    |   |   |__ Controllers
+    |   |   |   |__ *.php -> astratti *
+    |   |   |   |__ Concrete
+    |   |   |__ Middleware
+    |   |__ Models *
+    |   |   |__ *.php -> concreti
+    |   |   |__ Base *
+    |   |__ Providers
+    |   |__ Traits
+    |   |__ Utils
+    |       |__ ...
+    |__ bootstrap
+    |   |__ ...
+    |__ config
+    |__ database
+    |   |__ factories
+    |   |__ migrations
+    |   |__ seeders
+    |__ resources
+    |   |__ ...
+    |__ routes
+    |   |__ ...
+    |__ storage
+    |   |__ ...
+    |   |__ logs *
+    |       |__ api
+    |       |__ internal
+    |__ tests
+    |__ ...
 
-## Laravel Sponsors
+**\*** : [Classi Astratte]
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**\*** : i `Modelli` sono autogenerati con l'utilizzo della libreria [Reliese Laravel] e vengono aggiornato sulla base della configurazione a DB col comando:
 
-### Premium Partners
+```
+php artisan code:models --table=\*\*
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Qualsiasi customizzazione (o modello aggiuntivo) deve essere effettuata nella loro estensione(cartella Models) e non nel generato(cartella Base).
 
-## Contributing
+**\*** : i file di `LOG` registrano ogni attività esterna (API) che interna (internal) che viene effettuata.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Login
 
-## Security Vulnerabilities
+> Conoscenze richieste:
+> [SSO];
+> [Oauth2];
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Passport-Laravel fornisce un sistema di login OAuth2 con il quale otteniamo un SSO dall'ente che detiene le credenziali criptate di accesso utilizzando Bearer Token oppure permette l'autocertificazione ove non esiste il servizio di autenticazione.
 
-## License
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## Controller
+
+> Conoscenze richieste:
+> [CRUD];
+> [Classi Astratte];
+
+I controller sono gestiti mediante due astratti principali `AbstractApiController` e `AbstractCrudController` (entrambi estendono `AbstractGenericController`) divisi ovviamente quindi in controller CRUD per interazioni interna col DB (architettura a microservizi) e chiamate API esterne.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[Laravel]:(http://laravel.com/docs)
+[PATH ufficiale Laravel]:(https://laravel.com/docs/10.x/structure)
+[Classi Astratte]:(https://www.php.net/manual/en/language.oop5.abstract.php)
+[Reliese Laravel]:(https://github.com/reliese/laravel)
+[SSO]:(https://it.wikipedia.org/wiki/Single_sign-on)
+[Oauth2]:(https://oauth.net/2/)
+[CRUD]:(https://it.wikipedia.org/wiki/CRUD)
