@@ -1,0 +1,36 @@
+[create project]
+composer create-project laravel/laravel cloud-care
+
+[start it on http://localhost/]
+cd cloud-care
+php artisan serve [check is working]
+
+[execute migrations]
+php artisan migrate
+
+[install sail]
+composer require laravel/sail --dev
+
+[create mysql image]
+php artisan sail:install
+    ->mysql
+./vendor/bin/sail up
+
+[create redis image]
+php artisan sail:install
+    ->redis
+
+[start container]
+./vendor/bin/sail up -d
+
+[stop container]
+./vendor/bin/sail stop
+
+[example composer command]
+./vendor/bin/sail composer require laravel/sanctum
+
+[example artisan command]
+./vendor/bin/sail artisan queue:work
+
+[run tests]
+./vendor/bin/sail test
