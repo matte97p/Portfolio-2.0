@@ -92,6 +92,13 @@ php artisan sail:install
 ./vendor/bin/sail php artisan db:seed
 ```
 
+[install package-lock+bootstrap & run vite]
+```
+npm install
+npm install bootstrap
+npm run dev
+```
+
 [inspire the dev]
 ```
 php artisan inspire

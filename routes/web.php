@@ -13,7 +13,7 @@ Route::get('/php', function () {
     echo phpinfo();
 });
 
-Route::get('/login', function () { return view('login'); })->name('login');
+Route::get('/login', function () { return view('auth.login'); })->name('login');
 
 /** Login */
 Route::post('/oauth', [AuthController::class, 'login']);

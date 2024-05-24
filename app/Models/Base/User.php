@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class User
  * 
  * @property string $id
- * @property string $name
+ * @property string $username
  * @property string $email
  * @property Carbon|null $email_verified_at
  * @property string $password
@@ -30,7 +30,7 @@ class User extends Model
 	use HasUuid;
 	use HasFactory;
 	const ID = 'id';
-	const NAME = 'name';
+	const USERNAME = 'username';
 	const EMAIL = 'email';
 	const EMAIL_VERIFIED_AT = 'email_verified_at';
 	const PASSWORD = 'password';
@@ -47,7 +47,7 @@ class User extends Model
 	];
 
 	protected $fillable = [
-		self::NAME,
+		self::USERNAME,
 		self::EMAIL,
 		self::EMAIL_VERIFIED_AT,
 		self::PASSWORD
