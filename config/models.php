@@ -68,6 +68,8 @@ return [
         */
 
         'use' => [
+            Illuminate\Database\Eloquent\Concerns\HasUuid::class,
+            Illuminate\Database\Eloquent\Factories\HasFactory::class,
             // Reliese\Database\Eloquent\BitBooleans::class,
             // Reliese\Database\Eloquent\BlamableBehavior::class,
         ],
@@ -170,7 +172,7 @@ return [
         |
         */
 
-        'base_files' => false,
+        'base_files' => true,
 
         /*
         |--------------------------------------------------------------------------
@@ -229,7 +231,7 @@ return [
         */
 
         'hidden' => [
-            '*secret*', '*password', '*token',
+            '*secret*', '*password', '*token', 'version', 'deleted_at',
         ],
 
         /*
@@ -245,6 +247,9 @@ return [
         */
 
         'guarded' => [
+            'staff_id',
+            'version',
+            '*token',
             // 'created_by', 'updated_by'
         ],
 
@@ -265,6 +270,8 @@ return [
 
         'casts' => [
             '*_json' => 'json',
+            '*_at' => 'datetime',
+            '*id' => 'string',
         ],
 
         /*
@@ -393,7 +400,7 @@ return [
          | that helps to avoid typos in strings when typing field names and allows to use
          | code competition with available model's field names.
          */
-        'with_property_constants' => false,
+        'with_property_constants' => true,
 
         /*
         |--------------------------------------------------------------------------
@@ -435,7 +442,7 @@ return [
         | if you want the $fillable to be generated in base files
         |
         */
-        'fillable_in_base_files' => false,
+        'fillable_in_base_files' => true,
 
         /*
         |--------------------------------------------------------------------------
@@ -447,7 +454,7 @@ return [
         | NOTE: This requires PHP 7.0 or later.
         |
         */
-        'enable_return_types' => false,
+        'enable_return_types' => true,
     ],
 
     /*
@@ -504,18 +511,18 @@ return [
     |
     */
 
-//    'connections' => [
-//        'read_only_external' => [
-//            'parent' => \App\Models\ReadOnlyModel::class,
-//            'connection' => true,
-//            'users' => [
-//                'connection' => false,
-//            ],
-//            'my_other_database' => [
-//                'password_resets' => [
-//                    'connection' => false,
-//                ]
-//            ]
-//        ],
-//    ],
+    //    'connections' => [
+    //        'read_only_external' => [
+    //            'parent' => \App\Models\ReadOnlyModel::class,
+    //            'connection' => true,
+    //            'users' => [
+    //                'connection' => false,
+    //            ],
+    //            'my_other_database' => [
+    //                'password_resets' => [
+    //                    'connection' => false,
+    //                ]
+    //            ]
+    //        ],
+    //    ],
 ];

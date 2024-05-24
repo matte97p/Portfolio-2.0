@@ -53,11 +53,6 @@ php artisan sail:install
     xdebug.client_port = 9003
 ```
 
-[add xdebug on env]
-```
-SAIL_XDEBUG_MODE=develop,debug,coverage
-```
-
 [rebuild sail docker]
 ```
 ./vendor/bin/sail build --no-cache
@@ -71,7 +66,16 @@ SAIL_XDEBUG_MODE=develop,debug,coverage
 [install model generator from db]
 ```
 ./vendor/bin/sail composer require reliese/laravel
-php artisan vendor:publish --tag=reliese-models
+./vendor/bin/sail php artisan vendor:publish --tag=reliese-models
+```
+[laravel 11 have removed Illuminate\Database\Connection::getDoctrineSchemaManager() https://laravel.com/docs/11.x/upgrade]
+[that cause a bug on reliese/laravel https://github.com/reliese/laravel/issues/273]
+[fix like @uacode https://github.com/reliese/laravel/issues/273#issuecomment-2016756918]
+[waiting for pr that resolve https://github.com/reliese/laravel/pull/208]
+
+[create models]
+```
+./vendor/bin/sail php artisan code:models
 ```
 
 [provides a full OAuth2 server implementation]
