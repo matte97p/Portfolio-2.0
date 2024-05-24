@@ -11,7 +11,6 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
-use App\Http\Controllers\AbstractGenericController;
 
 /**
  * @author Matteo Perino
@@ -145,7 +144,9 @@ abstract class AbstractApiController extends AbstractGenericController
             $entry_content = $options[RequestOptions::BODY];
         }
 
-        if (isset($options[RequestOptions::HEADERS])) $entry_content .= "\nHeaders: " . json_encode($options[RequestOptions::HEADERS]);
+        if (isset($options[RequestOptions::HEADERS])) {
+            $entry_content .= "\nHeaders: " . json_encode($options[RequestOptions::HEADERS]);
+        }
 
         $endpoint = $this->getBaseUri() . '/' . $uri;
 
@@ -173,7 +174,7 @@ abstract class AbstractApiController extends AbstractGenericController
         $body = null;
         if (is_string($response)) {
             $body = $response;
-        } else if (is_object($response)) {
+        } elseif (is_object($response)) {
             $interfaces = class_implements($response);
             if (isset($interfaces[ResponseInterface::class])) {
                 $body = (string) $response->getBody() . "\nHeaders: " . json_encode($response->getHeaders());

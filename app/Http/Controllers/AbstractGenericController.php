@@ -17,14 +17,17 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 abstract class AbstractGenericController extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequests;
 
     protected ?Client $client = null;
     protected ?Logger $logger = null;
     protected static $errors = [];
 
     public function __construct(Request $request)
-    {}
+    {
+    }
 
     /**
      * Log action
@@ -44,12 +47,12 @@ abstract class AbstractGenericController extends BaseController
     {
         return (App::isLocal() ? '[TEST]' : '') . ('[User:' . (Auth::user()->user_id ?? 'Anon') . ']');
     }
-    
+
     /**
      * Log request object
      *
      * @var array $items
-     * 
+     *
      * @return string
      *
      * @throws \Exception

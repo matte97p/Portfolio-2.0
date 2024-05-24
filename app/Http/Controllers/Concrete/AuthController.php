@@ -50,7 +50,9 @@ class AuthController extends AbstractApiController
                 $this::$errors,
             );
 
-            if ($validator->fails()) throw ValidationException::withMessages($validator->errors()->all());
+            if ($validator->fails()) {
+                throw ValidationException::withMessages($validator->errors()->all());
+            }
 
             $credentials = [
                 'name' => $request->get('username'),

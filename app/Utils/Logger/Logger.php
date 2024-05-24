@@ -13,8 +13,8 @@ use Monolog\Handler\StreamHandler;
  */
 class Logger extends \Monolog\Logger
 {
-    const ACTION_REQUEST = 'request';
-    const ACTION_RESPONSE = 'response';
+    public const ACTION_REQUEST = 'request';
+    public const ACTION_RESPONSE = 'response';
 
     /**
      * @var string
@@ -35,7 +35,7 @@ class Logger extends \Monolog\Logger
      * @param array $processors
      * @param DateTimeZone|null $timezone
      */
-    function __construct(string $name, string $path, array $handlers = [], array $processors = [], ?DateTimeZone $timezone = null)
+    public function __construct(string $name, string $path, array $handlers = [], array $processors = [], ?DateTimeZone $timezone = null)
     {
         parent::__construct($name, $handlers, $processors, $timezone);
 
@@ -88,7 +88,7 @@ class Logger extends \Monolog\Logger
      */
     protected function getLogRoot()
     {
-        if( is_null(static::$log_root) ){
+        if(is_null(static::$log_root)) {
             static::$log_root = base_path() . '/storage/logs/';
         }
 

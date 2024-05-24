@@ -6,7 +6,6 @@ use Exception;
 use Illuminate\Http\Request;
 use GuzzleHttp\RequestOptions;
 use App\Exceptions\CustomHandler;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\AbstractApiController;
 
@@ -41,7 +40,7 @@ class BeerController extends AbstractApiController
         try {
             $parameters =
                 [
-                    RequestOptions::JSON =>[]
+                    RequestOptions::JSON => []
                 ];
 
             $response = $this->request('get', 'breweries', $parameters);

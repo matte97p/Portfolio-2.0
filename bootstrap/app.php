@@ -15,7 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // $middleware->append(\App\Http\Middleware\Cors::class);
         // $middleware->append(\App\Http\Middleware\VerifyCsrfToken::class);
-    
+
         $middleware->alias(['auth' => \App\Http\Middleware\Authenticate::class]);
         $middleware->alias(['can' => \Illuminate\Auth\Middleware\Authorize::class]);
         $middleware->alias(['cors' => \App\Http\Middleware\Cors::class]);

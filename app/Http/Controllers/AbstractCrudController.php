@@ -6,7 +6,6 @@ use GuzzleHttp\Utils;
 use App\Utils\Logger\Logger;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use App\Http\Controllers\AbstractGenericController;
 
 /**
  * @author Matteo Perino
@@ -59,13 +58,15 @@ abstract class AbstractCrudController extends AbstractGenericController
     {
         $entry_content = '';
 
-        if( !empty(json_decode($this->request->getContent(), true)) ){
+        if(!empty(json_decode($this->request->getContent(), true))) {
             $entry_content = Utils::jsonEncode(json_decode($this->request->getContent(), true));
-        }else{
+        } else {
             $entry_content = "{}";
         }
 
-        if(!empty($this->request->header())) $entry_content .= "\nHeaders: " . json_encode($this->request->header());
+        if(!empty($this->request->header())) {
+            $entry_content .= "\nHeaders: " . json_encode($this->request->header());
+        }
 
         $endpoint = $this->request->fullUrl();
 

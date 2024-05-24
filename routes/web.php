@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Concrete\AuthController;
 use App\Http\Controllers\Concrete\BeerController;
-use App\Http\Controllers\Concrete\DashboardController;
 
 /** Views */
 Route::get('/', function () {
@@ -26,4 +25,3 @@ Route::middleware('auth')->get('/dashboard', function () { return view('dashboar
 Route::group(['prefix' => '/beer', 'middleware' => ['auth']], function () {
     Route::get('/breweries', [BeerController::class, 'breweries']);
 });
-
