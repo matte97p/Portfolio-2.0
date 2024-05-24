@@ -3,12 +3,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <a href="https://github.com/matte97p/Cloud-Care">
+    <a href="https://github.com/matte97p/Portfolio-2.0">
         <img src="storage/app/public/matte97.p.svg" alt="Logo" width="500" height="400">
     </a>
 </div>
 
-# Cloud-Care
+# Portfolio-2.0
 
 > Conoscenze richieste:
 > [Laravel](https://laravel.com/docs);
@@ -23,7 +23,7 @@ Rappresenta lo scheletro del nuovo backend. Leggi il generico README.md di proge
 
 **Principali cartelle del progetto(non vengono percorse tutte le cartelle base di Laravel fare riferimento alla [PATH ufficiale Laravel](https://laravel.com/docs/10.x/structure).**
 
-    Cloud-Care
+    Portfolio-2.0
     |__ app
     |   |__ Exceptions -> Handler di eccezione custom
     |   |__ Http
