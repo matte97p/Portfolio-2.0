@@ -55,7 +55,7 @@ class AuthController extends AbstractApiController
             }
 
             $credentials = [
-                'name' => $request->get('username'),
+                'username' => $request->get('username'),
                 'password' => $request->get('password'),
             ];
 
