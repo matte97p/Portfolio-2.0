@@ -18,6 +18,9 @@
                 <button name="submit" type="submit" class="btn btn-primary">{{ __('auth.login') }}</button>
             </div>
         </form>
+        <a href="{{ route('register') }}" class="align-items-center justify-content-between">
+            <span>{{ __('auth.notReg') }}</span>
+        </a>
         @if(count($errors) > 0)
             @foreach( $errors->all() as $message )
                 <div class="alert alert-danger display-hide">

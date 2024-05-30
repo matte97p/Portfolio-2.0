@@ -24,6 +24,8 @@ return [
     'loginSucc' => 'Login successfully!',
     'logoutSucc' => 'Logout successfully!',
 
+    'alreadyReg' => 'Already register?',
+    'notReg' => 'Register!',
     'login' => 'Login',
     'logout' => 'Logout',
     'register' => 'Register',

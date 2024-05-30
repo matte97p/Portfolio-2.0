@@ -24,6 +24,8 @@ return [
     'loginSucc' => 'Login effettuato con successo!',
     'logoutSucc' => 'Logout effettuato con successo!',
 
+    'alreadyReg' => 'Già registrato?',
+    'notReg' => 'Registrati!',
     'login' => 'Accedi',
     'logout' => 'Esci',
     'register' => 'Registrati',
