@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Concrete;
 use Exception;
 use Illuminate\Http\Request;
 use App\Exceptions\CustomHandler;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -38,7 +39,7 @@ class AuthController extends AbstractApiController
      *
      * @throws Exception
      */
-    public function login(Request $request): RedirectResponse
+    public function login(Request $request): RedirectResponse|JsonResponse
     {
         try {
             $validator = Validator::make(
@@ -60,14 +61,14 @@ class AuthController extends AbstractApiController
             ];
 
             if (!Auth::attempt($credentials)) {
-                return redirect()->back()->withErrors('Credenziali errate!');
+                return redirect()->back()->withErrors(trans('auth.errors.passwordWrong'));
             }
 
             // $token = Auth::user()->createToken('passportToken')->accessToken;
 
-            return redirect('/dashboard', 201)->with('success', 'Login effettuato con successo!');
+            return redirect('/dashboard', 201)->with('success', trans('auth.loginSucc'));
         } catch (\Exception $e) {
-            return CustomHandler::renderCustom($e, "Login fallito!");
+            return CustomHandler::renderCustom($e, trans('auth.errors.login'));
         }
     }
 
@@ -84,15 +85,15 @@ class AuthController extends AbstractApiController
     {
         try {
             if (!Auth::check()) {
-                return response()->json(["message" => "Utente non loggato!"], 401);
+                return response()->json(["message" => trans('auth.errors.notLogged')], 401);
             }
 
             Auth::logout();
             // Auth::user()->token()->revoke();
 
-            return redirect('/login', 201)->with('success', 'Logout effettuato con successo!');
+            return redirect('/login', 201)->with('success', trans('auth.logoutSucc'));
         } catch (\Exception $e) {
-            return CustomHandler::renderCustom($e, "Login fallito!");
+            return CustomHandler::renderCustom($e, trans('auth.errors.logout'));
         }
     }
 }

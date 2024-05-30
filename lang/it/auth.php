@@ -13,9 +13,16 @@ return [
     |
     */
 
-    'failed' => 'Login fallito!',
-    'password' => 'Credenziali errate!',
-    'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
+    'errors' => [
+        'login' => 'Accesso fallito!',
+        'logout' => 'Disconnessione fallita!',
+        'passwordWrong' => 'Credenziali errate!',
+        'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
+        'notLogged' => 'Utente non loggato!',
+    ],
+
+    'loginSucc' => 'Login effettuato con successo!',
+    'logoutSucc' => 'Logout effettuato con successo!',
 
     'login' => 'Accedi',
     'logout' => 'Esci',

@@ -35,7 +35,7 @@ class BeerController extends AbstractApiController
      *
      * @throws Exception
      */
-    public function breweries(Request $request): \Illuminate\View\View
+    public function breweries(): \Illuminate\View\View
     {
         try {
             $parameters =
@@ -49,7 +49,7 @@ class BeerController extends AbstractApiController
 
             return view('beer', array('data' => $this->paginate($response)))->with("message", "Data retrived");
         } catch (\Exception $e) {
-            return CustomHandler::renderCustom($e, "Login fallito!");
+            return CustomHandler::renderCustom($e, trans('main.errors.list'));
         }
     }
 }

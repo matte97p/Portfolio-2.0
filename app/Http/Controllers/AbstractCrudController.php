@@ -6,6 +6,7 @@ use GuzzleHttp\Utils;
 use App\Utils\Logger\Logger;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 
 /**
  * @author Matteo Perino
@@ -30,8 +31,8 @@ abstract class AbstractCrudController extends AbstractGenericController
      * @return Response
      * @throws Exception
      */
-    abstract protected function create(Request $request): JsonResponse; //C
-    abstract protected function read(Request $request): JsonResponse;   //R
+    abstract protected function create(Request $request): JsonResponse|RedirectResponse; //C
+    abstract protected function read(Request $request): JsonResponse|RedirectResponse;   //R
     abstract protected function update(Request $request): JsonResponse; //U
     abstract protected function delete(Request $request): JsonResponse; //D
 

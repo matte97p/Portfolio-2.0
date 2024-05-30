@@ -9,5 +9,13 @@ return [
     'about' => 'Info',
     'menu' => 'Menu',
     'btt' => 'Torna su',
-    'copyright' => 'sentiti libero di scaricare il progetto per imparare le basi di Laravel'
+    'copyright' => 'sentiti libero di scaricare il progetto per imparare le basi di Laravel',
+
+    'errors' => [
+        'pageNF' => 'Pagina non trovata',
+        'dataNF' => 'Dato non trovato',
+        'dataE' => 'Errore di dati',
+        'permission' => 'Non hai i permessi',
+        'list' => 'Ricerca fallita',
+    ],
 ];

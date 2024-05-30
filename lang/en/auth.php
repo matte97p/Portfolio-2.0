@@ -13,9 +13,16 @@ return [
     |
     */
 
-    'failed' => 'Login failed!',
-    'password' => 'Wrong credentials!',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'errors' => [
+        'login' => 'Login failed!',
+        'logout' => 'Logout failed!',
+        'passwordWrong' => 'Wrong credentials!',
+        'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+        'notLogged' => 'User not logged in!',
+    ],
+
+    'loginSucc' => 'Login successfully!',
+    'logoutSucc' => 'Logout successfully!',
 
     'login' => 'Login',
     'logout' => 'Logout',
