@@ -4,7 +4,7 @@
 <div class="container py-5">
     <div class="w-50 center border rounded px-3 py-3 mx-auto">
         <h1>Login</h1>
-        <form action="/oauth" method="POST">
+        <form action="{{ route('login') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>

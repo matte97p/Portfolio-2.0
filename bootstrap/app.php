@@ -13,12 +13,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // $middleware->append(\App\Http\Middleware\Cors::class);
-        // $middleware->append(\App\Http\Middleware\VerifyCsrfToken::class);
+        $middleware->appendToGroup('web', \App\Http\Middleware\Cors::class);
+        $middleware->appendToGroup('web', \App\Http\Middleware\Localization::class);
 
         $middleware->alias(['auth' => \App\Http\Middleware\Authenticate::class]);
         $middleware->alias(['can' => \Illuminate\Auth\Middleware\Authorize::class]);
-        $middleware->alias(['cors' => \App\Http\Middleware\Cors::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(function (AuthenticationException $e, Request $request) {

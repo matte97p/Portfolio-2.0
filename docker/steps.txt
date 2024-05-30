@@ -92,6 +92,12 @@ php artisan sail:install
 ./vendor/bin/sail php artisan db:seed
 ```
 
+[localization]
+```
+./vendor/bin/sail php artisan lang:publish
+./vendor/bin/sail composer require outhebox/blade-flags
+```
+
 [install package-lock+bootstrap & run vite]
 ```
 npm install
@@ -114,16 +120,6 @@ php artisan inspire
 [stop container]
 ```
 ./vendor/bin/sail stop
-```
-
-[example composer command]
-```
-./vendor/bin/sail composer require laravel/sanctum
-```
-
-[example artisan command]
-```
-./vendor/bin/sail artisan queue:work
 ```
 
 [run tests]

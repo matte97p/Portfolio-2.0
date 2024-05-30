@@ -3,25 +3,35 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Concrete\AuthController;
 use App\Http\Controllers\Concrete\BeerController;
+use App\Http\Controllers\Concrete\UserController;
+use App\Http\Controllers\Concrete\LanguageController;
 
-/** Views */
+/** Welcome */
 Route::get('/', function () {
     return view('welcome');
 });
 
+/** PHPInfo */
 Route::get('/php', function () {
     echo phpinfo();
 });
 
-Route::get('/login', function () { return view('auth.login'); })->name('login');
-
-/** Login */
-Route::post('/oauth', [AuthController::class, 'login']);
+/** Localize */
+Route::get('/setLocale/{locale}', [LanguageController::class, 'setLocale'])->name('locale');
 
 /** Auth */
+Route::get('/login', function () { return view('auth.login'); })->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('oauth');
 Route::middleware('auth')->post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+/** Register */
+Route::get('/register', function () { return view('auth.register'); })->name('register');
+Route::post('/register', [UserController::class, 'create'])->name('user.create');
+
+/** Dashboard */
 Route::middleware('auth')->get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
 
+/** Beer */
 Route::group(['prefix' => '/beer', 'middleware' => ['auth']], function () {
-    Route::get('/breweries', [BeerController::class, 'breweries']);
+    Route::get('/breweries', [BeerController::class, 'breweries'])->name('beer.breweries');
 });
