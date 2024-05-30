@@ -2,9 +2,9 @@
 
 return [
     'title' => 'Portfolio 2.0',
-    'action' => [
-        'login' => 'Login',
-        'logout' => 'Logout',
+    'menus' => [
+        'dashboard' => 'Dashboard',
+        'breweries' => 'Breweries',
     ],
     'about' => 'About',
     'menu' => 'Menu',

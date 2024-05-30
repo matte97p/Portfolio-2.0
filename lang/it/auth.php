@@ -17,4 +17,11 @@ return [
     'password' => 'Credenziali errate!',
     'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
 
+    'login' => 'Accedi',
+    'logout' => 'Esci',
+    'register' => 'Registrati',
+    'username' => 'Username',
+    'password' => 'Password',
+    'email' => 'Email',
+    'confPassword' => 'Conferma Password',
 ];

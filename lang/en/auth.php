@@ -17,4 +17,11 @@ return [
     'password' => 'Wrong credentials!',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
+    'login' => 'Login',
+    'logout' => 'Logout',
+    'register' => 'Register',
+    'username' => 'Username',
+    'password' => 'Password',
+    'email' => 'Email',
+    'confPassword' => 'Confirm Password',
 ];

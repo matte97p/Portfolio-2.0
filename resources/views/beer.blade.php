@@ -3,26 +3,26 @@
 @section('body')
 <div class="container py-5">
     <div class="container">
-        <h1> Welcome, {{ Auth::user()->name }}</h1>
+        <h1> {{ __('main.welcome') }}, {{ Auth::user()->name }}</h1>
     </div>
     <div class="d-flex justify-content-around">
         <a href="{{ route('dashboard') }}">
-            <button class="btn btn-primary btn-custom-primary btn-custom">{{ 'Dashboard' }}</button>
+            <button class="btn btn-primary btn-custom-primary btn-custom">{{ __('main.menus.dashboard') }}</button>
         </a>
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button name="submit" type="submit" class="btn btn-danger">{{ 'Logout' }}</button>
+            <button name="submit" type="submit" class="btn btn-danger">{{ __('auth.logout') }}</button>
         </form>
     </div>
     <table class="table table-sm">
         <thead>
             <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>City</th>
-                <th>Address</th>
-                <th>Phone</th>
+                <th>{{ __('beer.id') }}</th>
+                <th>{{ __('beer.name') }}</th>
+                <th>{{ __('beer.type') }}</th>
+                <th>{{ __('beer.city') }}</th>
+                <th>{{ __('beer.address') }}</th>
+                <th>{{ __('beer.phone') }}</th>
             </tr>
         </thead>
         <tbody>
