@@ -126,3 +126,8 @@ php artisan inspire
 ```
 ./vendor/bin/sail test
 ```
+
+[pint ref psr12]
+```
+./vendor/bin/pint
+```

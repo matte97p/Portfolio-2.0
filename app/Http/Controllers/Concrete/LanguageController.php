@@ -11,7 +11,7 @@ class LanguageController extends AbstractGenericController
 {
     /**
      * @var string $locale
-     * 
+     *
      * @return Redirect
      */
     public function setLocale($locale): RedirectResponse

@@ -9,8 +9,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\AbstractApiController;
 
 class AuthController extends AbstractApiController
@@ -42,18 +40,13 @@ class AuthController extends AbstractApiController
     public function login(Request $request): RedirectResponse|JsonResponse
     {
         try {
-            $validator = Validator::make(
-                $request->all(),
+            $request->validate(
                 [
                     'username' => ['required'],
                     'password' => ['required', 'string'],
                 ],
                 $this::$errors,
             );
-
-            if ($validator->fails()) {
-                throw ValidationException::withMessages($validator->errors()->all());
-            }
 
             $credentials = [
                 'username' => $request->get('username'),

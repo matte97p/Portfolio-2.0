@@ -16,6 +16,7 @@ return [
     'errors' => [
         'login' => 'Login failed!',
         'logout' => 'Logout failed!',
+        'register' => 'Registration failed!',
         'passwordWrong' => 'Wrong credentials!',
         'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
         'notLogged' => 'User not logged in!',

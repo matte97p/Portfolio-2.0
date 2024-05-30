@@ -8,7 +8,7 @@
             @csrf
             <div class="mb-3">
                 <label for="username" class="form-label">{{ __('auth.username') }}</label>
-                <input type="username" value="" name="username" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" required>
+                <input type="username" id="username" name="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('username') }}" required>
                 @if ($errors->has('username'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('username') }}</strong>
@@ -34,13 +34,8 @@
                 @endif
             </div>
             <div class="mb-3">
-                <label for="confirmPassword" class="form-label">{{ __('auth.confPassword') }}</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control{{ $errors->has('confirmPassword') ? ' is-invalid' : '' }}" required>
-                @if ($errors->has('password'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                @endif
+                <label for="password_confirmation" class="form-label">{{ __('auth.confPassword') }}</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control{{ $errors->has('confirmPassword') ? ' is-invalid' : '' }}" required>
             </div>
             @if(session()->has('alert'))
                 <p>{{ session('alert') }}</p>

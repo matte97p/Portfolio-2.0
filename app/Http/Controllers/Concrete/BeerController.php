@@ -49,7 +49,7 @@ class BeerController extends AbstractApiController
 
             return view('beer', array('data' => $this->paginate($response)))->with("message", "Data retrived");
         } catch (\Exception $e) {
-            return CustomHandler::renderCustom($e, trans('main.errors.list'));
+            return CustomHandler::renderCustom($e, trans('main.errors.read'));
         }
     }
 }

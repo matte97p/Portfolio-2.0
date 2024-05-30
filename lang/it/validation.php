@@ -164,14 +164,10 @@ return [
         'name' => [
             'required' => 'Inserire il nome.',
             'string' => 'Il nome non è valido.',
-            'unique' => 'Il nome è già registrato.',
-            'max' => 'Nome troppo lungo.',
         ],
         'surname' => [
             'required' => 'Inserire il cognome.',
             'string' => 'Il cognome non è valido.',
-            'unique' => 'Il cognome è già registrato.',
-            'max' => 'Cognome troppo lungo.',
         ],
         'gender' => [
             'required' => 'Inserire il sesso.',
@@ -203,49 +199,17 @@ return [
             'email' => 'L\'email non è valida.',
             'unique' => 'L\'email è già registrata.',
         ],
+        'username' => [
+            'required' => 'Inserire lo username.',
+            'string' => 'Lo username non è valido.',
+            'unique' => 'Lo username è già registrato.',
+            'min' => 'Lo username deve avere almeno :min caratteri.',
+        ],
         'password' => [
             'required' => 'Inserire la password.',
             'string' => 'La password non è valida.',
             'confirmed' => 'Password di conferma non corrisponde.',
-        ],
-        'user' => [
-            'required' => 'Scegli un utente.',
-            'string' => 'Errore nella scelta dell\'utente.',
-        ],
-        'users' => [
-            'required' => 'Scegli almeno un utente.',
-            'array' => 'Scegli almeno un utente.',
-            'min' => 'Scegli almeno un utente.',
-        ],
-        'users.*' => [
-            'string' => 'Errore nella scelta dell\'utente.',
-            'exists' => 'Utente inesistente.',
-        ],
-        'role' => [
-            'required' => 'Scegli un ruolo.',
-            'string' => 'Errore nella scelta del ruolo.',
-        ],
-        'roles' => [
-            'required' => 'Scegli almeno un ruolo.',
-            'array' => 'Errore nella scelta dei ruoli.',
-            'min' => 'Scegli almeno un ruolo.',
-        ],
-        'roles.*' => [
-            'string' => 'Errore nella scelta del ruolo.',
-            'exists' => 'Ruolo inesistente.',
-        ],
-        'permission' => [
-            'required' => 'Scegli un permesso.',
-            'string' => 'Errore nella scelta del permesso.',
-        ],
-        'permissions' => [
-            'required' => 'Scegli almeno un permesso.',
-            'array' => 'Errore nella scelta dei permessi.',
-            'min' => 'Scegli almeno un permesso.',
-        ],
-        'permissions.*' => [
-            'string' => 'Errore nella scelta del permesso.',
-            'exists' => 'Permesso inesistente.',
+            'min' => 'La password deve avere almeno :min caratteri.',
         ],
     ],
 

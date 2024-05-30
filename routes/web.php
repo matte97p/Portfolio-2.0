@@ -31,6 +31,13 @@ Route::post('/register', [UserController::class, 'create'])->name('user.create')
 /** Dashboard */
 Route::middleware('auth')->get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
 
+/** User */
+Route::group(['prefix' => '/user', 'middleware' => ['auth']], function () {
+    Route::get('/list', [UserController::class, 'read'])->name('user.list');
+    Route::put('/update', [UserController::class, 'update'])->name('user.update');
+    Route::post('/delete', [UserController::class, 'delete'])->name('user.delete');
+});
+
 /** Beer */
 Route::group(['prefix' => '/beer', 'middleware' => ['auth']], function () {
     Route::get('/breweries', [BeerController::class, 'breweries'])->name('beer.breweries');

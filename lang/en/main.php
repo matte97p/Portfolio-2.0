@@ -16,6 +16,9 @@ return [
         'dataNF' => 'Data not found',
         'dataE' => 'Data error',
         'permission' => 'You don\'t have permission',
-        'list' => 'Seach failed',
+        'create' => 'Creation failed',
+        'read' => 'Seach failed',
+        'update' => 'Updating failed',
+        'delete' => 'Deleting failed',
     ],
 ];

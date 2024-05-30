@@ -16,6 +16,7 @@ return [
     'errors' => [
         'login' => 'Accesso fallito!',
         'logout' => 'Disconnessione fallita!',
+        'register' => 'Registrazione fallita!',
         'passwordWrong' => 'Credenziali errate!',
         'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
         'notLogged' => 'Utente non loggato!',

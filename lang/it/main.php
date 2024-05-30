@@ -16,6 +16,9 @@ return [
         'dataNF' => 'Dato non trovato',
         'dataE' => 'Errore di dati',
         'permission' => 'Non hai i permessi',
-        'list' => 'Ricerca fallita',
+        'create' => 'Creazione fallita',
+        'read' => 'Ricerca fallita',
+        'update' => 'Aggiornamento fallito',
+        'delete' => 'Cancellazione fallita',
     ],
 ];
