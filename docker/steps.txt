@@ -1,6 +1,6 @@
 [create project]
 ```
-composer create-project laravel/laravel cloud-care
+composer create-project laravel/laravel portfolio2_0
 ```
 
 [start it on http://localhost/]
